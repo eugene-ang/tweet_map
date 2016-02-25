@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+<div id="datepicker_wrapper">Date: <input type="text" id="datepicker"></div>
+<div id="map" data-condition='{{map_input['conditions']}}' data-day='{{map_input['day']}}'></div>
+<div id="center-button">
+  <div id="center-ui" title="Click to recenter the map">
+    <div id="center-text">Center Map</div>
+  </div>
+</div>
+
+<!-- Include cartodb.css style -->
+<link rel=stylesheet href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+
+<!-- Include cartodb.js library -->
+<script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+
+<!-- Include Google Maps library -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkOF-XCvogzQK8CQH-cMcE4gIhLQhN4Pg&libraries=visualization"></script>
+
+<!-- Include JQuery library -->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script  type="text/javascript" src="{{ url_for('static', filename='heatmap.js') }}"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+{% endblock %}
